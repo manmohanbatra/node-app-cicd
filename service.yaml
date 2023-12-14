@@ -1,0 +1,16 @@
+apiVersion: v1
+# Indicates this as a service
+kind: Service
+metadata:
+ # Service name
+ name: node-app-deployment
+spec:
+ ports:
+   # Port Map
+ - port: 80
+   targetPort: 3000
+   protocol: TCP
+   # Selector for Pods
+ selector:
+   app: node-app
+ type: NodePort
